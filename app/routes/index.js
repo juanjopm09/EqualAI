@@ -90,6 +90,31 @@ class SettingsScreen extends Component {
     }
 }
 
+class SettingsScreen extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { isOn: true };
+    }
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text>Settings</Text>
+                <View style={{marginTop: 100}}>
+                    <ToggleSwitch
+                        isOn={this.state.isOn}
+                        onColor='bloe'
+                        offColor='green'
+                        label='Passive Learning'
+                        labelStyle={{color: 'black', fontWeight: '800'}}
+                        size='large'
+                        onToggle={ (isOn) => this.setState({ isOn: isOn }) }
+                    />
+                </View>
+            </View>
+        );
+    }
+}
+
 const Navigator = createMaterialBottomTabNavigator({
     EqualAI: {
         screen: EqualAIScreen,
